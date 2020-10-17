@@ -65,6 +65,12 @@ public class AnimationScript : MonoBehaviour
             }
             
         }
+		/*
+		if(agent.isOnOffMeshLink == true)
+		{
+			LocationScript.anim.SetTrigger("Jump");
+		}
+		*/
 
         if (one_click)
         {
@@ -95,6 +101,8 @@ public class AnimationScript : MonoBehaviour
         }
 
     }
+	
+
 
 }
 

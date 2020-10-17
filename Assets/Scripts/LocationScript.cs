@@ -43,6 +43,11 @@ public class LocationScript : MonoBehaviour
         anim.SetFloat("x_vel", velocity.x);
         anim.SetFloat("y_vel", velocity.y);
 
+		if(agent.isOnOffMeshLink == true)
+		{
+			anim.SetTrigger("Jump");
+		}
+
     }
 
     void OnAnimatorMove()
