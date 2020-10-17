@@ -2,12 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CameraController : MonoBehaviour
 {
-   
+
+    public GameObject player;
+
+    Vector3 offset;
+
+    const int orthographicSizeMin = 1;
+    const int orthographicSizeMax = 6;
+
+    void Start()
+    {
+        offset = player.transform.position - transform.position;
+    }
+
     void Update()
     {
-        if (!Input.GetKey(KeyCode.CapsLock))
+
+        /* THIS CODE IS FOR PART 1: WASD CONTROL
+        float y = Input.GetAxis("Horizontal");
+
+        float displacement = player.transform.eulerAngles.y;
+        Quaternion rotation = Quaternion.Euler(0, displacement, 0);
+
+        transform.position = player.transform.position - (rotation * offset);
+        transform.LookAt(player.transform);
+		*/
+
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
+            transform.Translate(0, 0, scroll * 5, Space.Self);
+        }
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
+            transform.Translate(0, 0, scroll * 5, Space.Self);
+        }
+
+        if (!Input.GetKey(KeyCode.LeftControl) && !Input.GetKey(KeyCode.LeftCommand))
         {
             var movement = Camera.main.transform.right * Input.GetAxis("Horizontal");
             var verticalMovement = Input.GetAxis("Vertical");
@@ -25,9 +61,9 @@ public class CameraController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
         }
-     
 
-        if (Input.GetKey(KeyCode.CapsLock))
+
+        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.LeftCommand))
         {
             if (Input.GetKey(KeyCode.W))
             {
@@ -48,7 +84,7 @@ public class CameraController : MonoBehaviour
             {
                 transform.Rotate(0.0f, 1.0f, 0.0f);
             }
-            
+
         }
     }
 }
