@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class AnimationScript : MonoBehaviour
 {
     private NavMeshAgent agent;
-    private string groundTag = "Ground";
+    private string groundTag = "ground";
 
     // Start is called before the first frame update
     void Start()
