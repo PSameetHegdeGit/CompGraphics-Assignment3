@@ -8,6 +8,8 @@ public class AnimationScript : MonoBehaviour
     private NavMeshAgent agent;
     private string groundTag = "ground";
 
+    Vector3 targetPosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,13 +31,36 @@ public class AnimationScript : MonoBehaviour
 
                 if (selection.CompareTag(groundTag))
                 {
-                    agent.SetDestination(hit.point);
+                    Vector3 offset = Random.insideUnitCircle * 0.5f;
+                    targetPosition = hit.point + offset;
+                    agent.SetDestination(targetPosition);
 
                 }
 
             }
         }
 
+        StartCoroutine("haltAgents");
+    }
+
+
+
+    void haltAgents()
+    {
+
+        if (targetPosition != null)
+        {
+
+            if (Vector3.Distance(targetPosition, agent.transform.position) <= 3f)
+            {
+                agent.velocity = Vector3.zero;
+
+            }
+
+        }
 
     }
 }
+
+
+

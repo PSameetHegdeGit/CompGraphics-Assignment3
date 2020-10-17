@@ -40,16 +40,16 @@ public class SelectedObjects : MonoBehaviour
 
         //}
 
-      
-
-        ////if (Input.GetKeyUp(KeyCode.Escape))
-        ////{
-        ////    DeselectAll();
-        ////}
 
 
-        ////StartCoroutine("haltAgents");
-    
+        //if (Input.GetKeyUp(KeyCode.Escape))
+        //{
+        //    DeselectAll();
+        //}
+
+
+        //StartCoroutine("haltAgents");
+
     }
 
 
@@ -114,12 +114,12 @@ public class SelectedObjects : MonoBehaviour
     //{
 
 
-    //    if(targetPosition != null)
+    //    if (targetPosition != null)
     //    {
 
-    //        foreach(NavMeshAgent agent in selectedAgents)
+    //        foreach (NavMeshAgent agent in selectedAgents)
     //        {
-    //           if(Vector3.Distance(targetPosition, agent.transform.position) <= 3f)
+    //            if (Vector3.Distance(targetPosition, agent.transform.position) <= 3f)
     //            {
     //                agent.velocity = Vector3.zero;
 
