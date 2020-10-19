@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 public class CameraController : MonoBehaviour
 {
 
-    //public GameObject player;
 
     Vector3 offset;
 
@@ -21,16 +20,6 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-
-        /* THIS CODE IS FOR PART 1: WASD CONTROL
-        float y = Input.GetAxis("Horizontal");
-
-        float displacement = player.transform.eulerAngles.y;
-        Quaternion rotation = Quaternion.Euler(0, displacement, 0);
-
-        transform.position = player.transform.position - (rotation * offset);
-        transform.LookAt(player.transform);
-		*/
 
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
