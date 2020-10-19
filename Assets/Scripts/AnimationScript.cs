@@ -15,18 +15,17 @@ public class AnimationScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();   
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        print("update");
 
         float x_vel = Input.GetAxis("Horizontal");
         float y_vel = Input.GetAxis("Vertical");
 
-  
+
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -43,7 +42,7 @@ public class AnimationScript : MonoBehaviour
         {
             anim.SetTrigger("Jump");
         }
-    
+
 
 
         anim.SetFloat("x_vel", x_vel);
