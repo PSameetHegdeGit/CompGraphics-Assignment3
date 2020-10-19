@@ -28,6 +28,7 @@ public class AnimationScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         
         if (Input.GetMouseButtonUp(0))
         {
@@ -102,7 +103,14 @@ public class AnimationScript : MonoBehaviour
 
     }
 	
-
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.CompareTag("smallObstacle")) //character hits small obstacle
+        {
+			anim.SetTrigger("Jump");
+			print("hello123123");
+        }
+	}
 
 }
 
