@@ -58,30 +58,6 @@ public class LocationScript : MonoBehaviour
 }
 
 
-//if (Input.GetKey(KeyCode.LeftShift))
-//{
-//    run = Mathf.Clamp01(run + 1 * Time.deltaTime);
-//}
-//else
-//{
-//    run = Mathf.Clamp01(run - 1 * Time.deltaTime);
-
-//}
-
-
-//if (Input.GetKeyDown(KeyCode.Space))
-//{
-//    anim.SetTrigger("Jump");
-//}
-
-//float x_vel = Input.GetAxis("Horizontal");
-//float y_vel = Input.GetAxis("Vertical");
 
 
 
-
-
-//anim.SetFloat("x_vel", x_vel);
-//anim.SetFloat("y_vel", y_vel);
-
-//anim.SetFloat("Run", run);

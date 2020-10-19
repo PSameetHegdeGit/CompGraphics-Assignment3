@@ -51,8 +51,15 @@ public class AnimationScript : MonoBehaviour
 
                     if (selection.CompareTag(groundTag))
                     {
-                        Vector3 offset = Random.insideUnitCircle * 0.5f;
-                        targetPosition = hit.point + offset;
+                        targetPosition = hit.point;
+                        
+                        agent.enabled = true;
+                        NavMeshPath navMeshPath = new NavMeshPath();
+                        agent.CalculatePath(targetPosition, navMeshPath);
+                        List<Vector3> path = new List<Vector3>(navMeshPath.corners);
+                        agent.enabled = false;
+
+           
                         agent.SetDestination(targetPosition);
 
                     }
