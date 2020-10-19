@@ -61,6 +61,17 @@ public class AnimationScript : MonoBehaviour
         {
             anim.SetLookAtWeight(1);
             anim.SetLookAtPosition(target.position);
+            if (diff.magnitude < 3)
+            {
+                anim.SetIKPositionWeight(AvatarIKGoal.RightHand, (5f - diff.magnitude) / 5f);
+                anim.SetIKPosition(AvatarIKGoal.RightHand, target.position);
+
+            }
+            else
+            {
+                anim.SetIKPositionWeight(AvatarIKGoal.RightHand, 0);
+
+            }
         }
         else
         {
