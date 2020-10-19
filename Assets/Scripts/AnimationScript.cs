@@ -21,7 +21,7 @@ public class AnimationScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        print("update");
 
         float x_vel = Input.GetAxis("Horizontal");
         float y_vel = Input.GetAxis("Vertical");
@@ -50,5 +50,21 @@ public class AnimationScript : MonoBehaviour
         anim.SetFloat("y_vel", y_vel);
         anim.SetFloat("Run", run);
 
+    }
+
+    void OnAnimatorIK()
+    {
+        var diff = transform.position - target.position;
+        diff.y = 0;
+
+        if (diff.magnitude < 50)
+        {
+            anim.SetLookAtWeight(1);
+            anim.SetLookAtPosition(target.position);
+        }
+        else
+        {
+            anim.SetLookAtWeight(0);
+        }
     }
 }
